@@ -437,7 +437,7 @@ A `TriggerTemplate` is a resource which have parameters that can be substituted 
 The definition of our TriggerTemplate is given in `03_triggers/02-template.yaml`.
 
 ```yaml
-apiVersion: triggers.tekton.dev/v1beta1
+apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
   name: vote-app
@@ -483,7 +483,7 @@ spec:
 * Run following command to apply Triggertemplate.
 
 ```bash
-$ oc create -f https://raw.githubusercontent.com/openshift/pipelines-tutorial/master/03_triggers/02_template.yaml
+$ oc create -f https://raw.githubusercontent.com/tgubeli/pipelines-tutorial/master/03_triggers/02_template.yaml
 ```
 
 
@@ -493,7 +493,7 @@ TriggerBindings is a map enable you to capture fields from an event and store th
 The definition of our TriggerBinding is given in `03_triggers/01_binding.yaml`.
 
 ```yaml
-apiVersion: triggers.tekton.dev/v1beta1
+apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
   name: vote-app
@@ -512,7 +512,7 @@ The exact paths (keys) of parameter we need can be found by examining the event 
 Run following command to apply TriggerBinding.
 
 ```bash
-$ oc create -f https://raw.githubusercontent.com/openshift/pipelines-tutorial/master/03_triggers/01_binding.yaml
+$ oc create -f https://raw.githubusercontent.com/tgubeli/pipelines-tutorial/master/03_triggers/01_binding.yaml
 ```
 
 ####  Trigger
@@ -521,7 +521,7 @@ $ oc create -f https://raw.githubusercontent.com/openshift/pipelines-tutorial/ma
 The definition of our Trigger is given in `03_triggers/03_trigger.yaml`.
 
 ```yaml
-apiVersion: triggers.tekton.dev/v1beta1
+apiVersion: triggers.tekton.dev/v1alpha1
 kind: Trigger
 metadata:
   name: vote-trigger
@@ -556,7 +556,7 @@ stringData:
 Run following command to apply Trigger.
 
 ```bash
-$ oc create -f https://raw.githubusercontent.com/openshift/pipelines-tutorial/master/03_triggers/03_trigger.yaml
+$ oc create -f https://raw.githubusercontent.com/tgubeli/pipelines-tutorial/master/03_triggers/03_trigger.yaml
 ```
 
 
@@ -570,7 +570,7 @@ The definition for our EventListener can be found in
 `03_triggers/04_event_listener.yaml`.
 
 ```yaml
-apiVersion: triggers.tekton.dev/v1beta1
+apiVersion: triggers.tekton.dev/v1alpha1
 kind: EventListener
 metadata:
   name: vote-app
@@ -582,7 +582,7 @@ spec:
 * Run following command to create EventListener.
 
 ```bash
-$ oc create -f https://raw.githubusercontent.com/openshift/pipelines-tutorial/master/03_triggers/04_event_listener.yaml
+$ oc create -f https://raw.githubusercontent.com/tgubeli/pipelines-tutorial/master/03_triggers/04_event_listener.yaml
 ```
 
 >***Note***: EventListener will setup a Service. We need to expose that Service as an OpenShift Route to make it publicly accessible.
